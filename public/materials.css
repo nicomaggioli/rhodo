@@ -1269,3 +1269,62 @@ summary {
     font-size: clamp(32px, 9.5vw, 38px);
   }
 }
+
+/* Keep the closing invitation on two deliberate lines. */
+.closing .closing-headline {
+  font-size: clamp(24px, 4.1vw, 58px);
+}
+.closing-headline span {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .closing .closing-headline {
+    font-size: clamp(24px, 6.8vw, 39px);
+  }
+}
+
+/* Comfortable reading widths on wide screens, with deliberate text endings. */
+.brand-story p:not(.eyebrow),
+.founder-copy > p:not(.eyebrow),
+.learning-detail-copy p,
+.responsibility-grid article > p:not(.eyebrow),
+.onboarding-list p,
+.faq details p {
+  max-width: 65ch;
+}
+.pricing-note > p:not(.eyebrow) {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+.transcript.section {
+  width: min(100%, 850px);
+  padding-inline: clamp(20px, 6vw, 72px);
+}
+.transcript article > p:not(.eyebrow) {
+  max-width: 65ch;
+}
+.transcript article > p:not(.eyebrow) + p {
+  margin-top: 16px;
+}
+.contact-intro h1 {
+  font-size: clamp(44px, 6.4vw, 85px);
+}
+.contact-intro h1 span {
+  display: block;
+  white-space: nowrap;
+}
+.faq details p a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.workflow [role="tabpanel"] > p,
+.delivery-note {
+  max-width: 65ch;
+}
+
+.pricing-note h2 {
+  max-width: 22ch;
+  margin-inline: auto;
+}
