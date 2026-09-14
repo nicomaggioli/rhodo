@@ -6,4 +6,4 @@ The structural-detail and studio-worktable photographs are generated illustrativ
 
 The dashboard images and narrated demo use the supplied application frontend with synthetic sample records. They are interface examples, not customer results or a demonstration of backend generation speed. Original private application source and databases are not included. The approved narration was generated with ElevenLabs Roger. The guided edit adds red callouts and feature zooms while preserving the approved audio and chapter timings.
 
-Geist and Inter are distributed with their SIL Open Font Licenses in `public/assets/fonts/`.
+Geist and Inter are distributed with their SIL Open Font Licenses in `dist/assets/fonts/`.

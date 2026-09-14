@@ -3,7 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import re
-ROOT=Path(__file__).resolve().parents[1]/"public"
+ROOT=Path(__file__).resolve().parents[1]/"dist"
 class Page(HTMLParser):
  def __init__(self,path):
   super().__init__();self.path=path;self.ids=[];self.refs=[];self.h1=0;self.errors=[];self.feed(path.read_text())

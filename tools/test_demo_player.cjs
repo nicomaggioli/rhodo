@@ -4,7 +4,7 @@ const path = require("node:path");
 const test = require("node:test");
 const vm = require("node:vm");
 
-const source = fs.readFileSync(path.join(__dirname, "../public/app.js"), "utf8");
+const source = fs.readFileSync(path.join(__dirname, "../dist/app.js"), "utf8");
 
 function player({ readyState = 0, reducedMotion = false, delivery = null } = {}) {
   class Element extends EventTarget {
@@ -253,7 +253,7 @@ test("both pages expose every approved chapter at its original timestamp", () =>
     fs.readFileSync(path.join(__dirname, "demo-scenes.json"), "utf8"),
   ).map((scene) => scene.start);
   for (const page of ["index.html", "system.html"]) {
-    const html = fs.readFileSync(path.join(__dirname, "..", "public", page), "utf8");
+    const html = fs.readFileSync(path.join(__dirname, "..", "dist", page), "utf8");
     const times = [...html.matchAll(/data-time="([0-9.]+)"/g)].map((match) =>
       Number(match[1]),
     );
