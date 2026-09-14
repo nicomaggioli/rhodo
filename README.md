@@ -2,7 +2,9 @@
 
 A website for independent architecture and engineering firms, with a narrated product tour showing SAM.gov discovery, AI analysis, team selection, and SF330 preparation.
 
-Live preview: https://rhodo.organics-jpg.chatgpt.site
+GitHub Pages destination: https://nicomaggioli.github.io/rhodo/
+
+Deployment is prepared. GitHub Pages must be enabled before the first publish.
 
 Source repository: https://github.com/nicomaggioli/rhodo
 
@@ -25,7 +27,7 @@ node --check public/app.js
 
 Six static HTML pages use shared CSS and JavaScript with local images and fonts. No install or build step is required. The demo has captions, a transcript, chapter navigation, and feature closeups. The logo is the angular R selected by the founder.
 
-The source is in `public/`. Update those files to change the website. Hosting configuration is stored separately from public assets.
+The source is in `public/`. Update those files to change the website. GitHub Pages publishes `public/` through `.github/workflows/pages.yml`. Every push to `main` validates and deploys the site. You can also run the workflow manually from the Actions tab. Only the contents of `public/` are uploaded to the website.
 
 ## Walkthrough inquiries
 
