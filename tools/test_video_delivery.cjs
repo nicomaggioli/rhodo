@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
 const test = require('node:test');
-const root = path.join(__dirname, '../public');
+const root = path.join(__dirname, '../dist');
 const folder = path.join(root, 'assets/demo-stream/22f2ac7ed6b50f6c');
 const manifest = JSON.parse(fs.readFileSync(path.join(folder, 'manifest.json')));
 const original = Buffer.concat(manifest.parts.map(p => fs.readFileSync(path.join(folder, p.file))));
