@@ -2,9 +2,7 @@
 
 A website for independent architecture and engineering firms, with a narrated product tour showing SAM.gov discovery, AI analysis, team selection, and SF330 preparation.
 
-GitHub Pages destination: https://nicomaggioli.github.io/rhodo/
-
-Deployment is prepared. GitHub Pages must be enabled before the first publish.
+Website: https://nicomaggioli.github.io/rhodo/
 
 Source repository: https://github.com/nicomaggioli/rhodo
 
