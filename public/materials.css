@@ -1328,3 +1328,151 @@ summary {
   max-width: 22ch;
   margin-inline: auto;
 }
+
+/* Native dashboard footage shows the AI work directly. */
+.learning-copy {
+  min-width: 0;
+}
+.ai-learning-heading > span {
+  display: block;
+  white-space: nowrap;
+}
+.ai-dashboard-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.ai-intro-copy {
+  max-width: 52ch;
+  color: #4c5951;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.ai-intro-copy p + p {
+  margin-top: 18px;
+}
+.ai-dashboard-demo {
+  min-width: 0;
+}
+.ai-dashboard-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+  border: 1px solid #c7ddce;
+  background: #fff;
+}
+.ai-dashboard-choices button {
+  min-width: 0;
+  min-height: 70px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border: 0;
+  border-right: 1px solid #c7ddce;
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  cursor: pointer;
+  text-wrap: balance;
+}
+.ai-dashboard-choices button:last-child {
+  border-right: 0;
+}
+.ai-dashboard-choices button > span {
+  color: #526158;
+  font-size: 10px;
+}
+.ai-dashboard-choices button[aria-pressed="true"] {
+  background: var(--mint);
+}
+.ai-dashboard-choices button:hover {
+  box-shadow: inset 0 -2px var(--ink);
+}
+#ai-dashboard-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background: var(--ink);
+}
+.ai-dashboard-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-top: 22px;
+}
+.ai-dashboard-caption > div {
+  max-width: 65ch;
+}
+.ai-clip-note {
+  color: #66746b;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-bottom: 9px;
+}
+#ai-dashboard-caption {
+  color: #425149;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.ai-dashboard-caption .text-link {
+  flex-shrink: 0;
+  font-size: 12px;
+  min-width: 190px;
+}
+@media (max-width: 900px) {
+  .ai-dashboard-intro {
+    gap: 6%;
+  }
+  .ai-dashboard-choices button {
+    padding: 15px;
+    gap: 9px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .ai-dashboard-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+  .learning-copy h2 {
+    margin-bottom: 0;
+  }
+  .ai-intro-copy {
+    font-size: 13px;
+  }
+  .ai-dashboard-choices button {
+    display: block;
+    min-height: 96px;
+    padding: 12px 10px;
+    font-size: 11px;
+  }
+  .ai-dashboard-choices button > span {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .ai-dashboard-caption {
+    display: block;
+    margin-top: 18px;
+  }
+  #ai-dashboard-caption {
+    font-size: 13px;
+  }
+  .ai-dashboard-caption .text-link {
+    margin-top: 18px;
+    width: 200px;
+  }
+}
+@media (max-width: 580px) {
+  .learning-copy .ai-learning-heading {
+    font-size: clamp(30px, 10.3vw, 43px);
+  }
+}

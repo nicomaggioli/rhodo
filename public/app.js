@@ -60,6 +60,41 @@
     });
   });
 
+  const aiVideo = document.querySelector("#ai-dashboard-video");
+  if (aiVideo) {
+    const choices = [...document.querySelectorAll("[data-ai-clip]")];
+    const caption = document.querySelector("#ai-dashboard-caption");
+    const captions = document.querySelector("#ai-dashboard-captions");
+    const narration = document.querySelector("[data-ai-narration]");
+    choices.forEach((button) =>
+      button.addEventListener("click", () => {
+        choices.forEach((choice) =>
+          choice.setAttribute("aria-pressed", String(choice === button)),
+        );
+        aiVideo.pause();
+        aiVideo.src = button.dataset.src;
+        aiVideo.poster = button.dataset.poster;
+        if (captions) captions.src = button.dataset.captions;
+        aiVideo.setAttribute("aria-label", button.dataset.title);
+        caption.textContent = button.dataset.caption.replace(
+          / (\S+)$/,
+          "\u00a0$1",
+        );
+        narration.dataset.start = button.dataset.narration;
+        aiVideo.load();
+        aiVideo.scrollIntoView({ block: "nearest", behavior: "instant" });
+        aiVideo.play().catch(() => {});
+      }),
+    );
+    narration.addEventListener("click", () => aiVideo.pause());
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) aiVideo.pause();
+    });
+    new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) aiVideo.pause();
+    }).observe(aiVideo);
+  }
+
   const dialog = document.querySelector("#trailer-dialog");
   const video = document.querySelector("#full-video");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -133,6 +168,7 @@
     document.querySelectorAll("[data-trailer]").forEach((button) =>
       button.addEventListener("click", () => {
         lastFocus = button;
+        aiVideo?.pause();
         dialog.showModal();
         document.body.classList.add("modal-open");
         startVideo(Number(button.dataset.start || 0), "instant");
