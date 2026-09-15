@@ -1476,3 +1476,10 @@ summary {
     font-size: clamp(30px, 10.3vw, 43px);
   }
 }
+
+/* Keep the collaboration name together on the narrowest phones. */
+@media (max-width: 360px) {
+  .founder-copy h2 {
+    font-size: 35px;
+  }
+}
